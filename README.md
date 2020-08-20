@@ -1,3 +1,3 @@
-# Test
+# Group Project
 
-github 연동테스트
+slack - github 연동 완료
