@@ -9,7 +9,7 @@ public class Output {
         System.out.println("\t\t<<급여관리 프로그램>>");
         this.printLine();
         //System.out.println("사번\t급수\t호\t수당\t지급액\t세금\t차인지급액");
-        System.out.printf("%5s%5s%5s%7s%7s%5s%10s\n","사번", "급수", "호", "수당", "지급액", "세금", "차인지급액");
+        System.out.printf("%5s\t%5s\t%5s\t%7s\t%7s\t%5s\t%10s\n","사번", "급수", "호", "수당", "지급액", "세금", "차인지급액");
         this.printLine();
         
         for(int i=0; i<this.vector.size(); i++) {
