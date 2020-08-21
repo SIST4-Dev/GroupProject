@@ -5,7 +5,7 @@ public class Main {
 		Vector<Employee> employee = new Vector<Employee>(); 
 		
 		Input i = new Input(employee);
-		i.input();
+		Vector employee2 = i.input();
 		
 		Calc c = new Calc(employee);
 		c.calc();
@@ -13,7 +13,7 @@ public class Main {
 		Sort s = new Sort(employee);
 		s.sort();
 
-		Output o = new Output(employee);
+		Output o = new Output(employee, employee2);
 		o.output();
 		
 	}

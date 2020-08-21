@@ -7,7 +7,7 @@ public class Input {
 		this.vector = vector;
 		this.scan = new Scanner(System.in);
 	}
-	public	void input(){
+	public Vector input(){
 		String y_n = "I";   //초기화
 		do{
 			System.out.print("사원번호 : ");
@@ -55,5 +55,11 @@ public class Input {
 			Employee employee = new Employee(no, level, ho, sudang);
 			this.vector.addElement(employee);
 		}while(y_n.toUpperCase().equals("I"));
+		
+		Vector<Employee> employee2 = new Vector<Employee>();
+		for(Employee e: this.vector) {
+			employee2.addElement(e);
+		}
+		return employee2;
 	}
 }
