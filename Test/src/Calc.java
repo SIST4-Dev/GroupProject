@@ -29,17 +29,41 @@ class Calc {
 	//급, 호별 급여
 	private int getPay(int level, int ho) {
 		int pay = 0;
-		if(level==1&&ho==1) {pay=95000;
-		}else if(level==1&&ho==2) {pay=92000;
-		}else if(level==1&&ho==3) {pay=89000;
-		}else if(level==1&&ho==4) {pay=86000;
-		}else if(level==1&&ho==5) {pay=83000;
-		}if(level==2&&ho==1) {pay=80000;
-		}else if(level==1&&ho==2) {pay=75000;
-		}else if(level==1&&ho==3) {pay=70000;
-		}else if(level==1&&ho==4) {pay=65000;
-		}else if(level==1&&ho==5) {pay=60000;
+		if(level==1) {
+			if(ho==1) {pay=95000;
+			}else if(ho==2) {
+				pay=92000;
+			}else if(ho==3) {
+				pay = 89000;
+			}else if(ho==4) {
+				pay = 86000;
+			}else if(ho==5) {
+				pay = 83000;
+			}
+		}if(level==2) {			
+			if(ho==1) {pay=80000;
+		}else if(ho==2) {
+			pay=75000;
+		}else if(ho==3) {
+			pay = 70000;
+		}else if(ho==4) {
+			pay = 65000;
+		}else if(ho==5) {
+			pay = 60000;
 		}
+	}
+//		if(level==1&&ho==1) {pay=95000;
+//		}else if(level==1&&ho==2) {pay=92000;
+//		}else if(level==1&&ho==3) {pay=89000;
+//		}else if(level==1&&ho==4) {pay=86000;
+//		}else if(level==1&&ho==5) {pay=83000;
+//		}
+//		if(level==2&&ho==1) {pay=80000;
+//		}else if(level==1&&ho==2) {pay=75000;
+//		}else if(level==1&&ho==3) {pay=70000;
+//		}else if(level==1&&ho==4) {pay=65000;
+//		}else if(level==1&&ho==5) {pay=60000;
+//		}
 		return pay;
 	}
 	//지급액별 세율

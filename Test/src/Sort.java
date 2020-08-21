@@ -17,8 +17,8 @@ public class Sort{
 		Collections.sort(this.employee, new Comparator<Employee>() {
 			@Override
 			public int compare(Employee o1, Employee o2) {
-				return (o1.getNo() > o2.getNo()) ? -1 :
-								(o1.getNo() < o2.getNo()) ? 1 : 0;
+				return (o1.getNo() > o2.getNo()) ? 1 :
+								(o1.getNo() < o2.getNo()) ? -1 : 0;
 			}
 		});
 
