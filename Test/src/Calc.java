@@ -1,3 +1,9 @@
+/**
+ * @author : KIMHEEJIN
+ * @date 2020. 8. 21.
+ * @objective 
+ * @environment : Windows 10pro/ OpenJDK14.0.2/ Eclipse 2020-06
+ */
 //no 사원번호 level 급 ho 호 sudang 수당 paid 지급액 tax 세금 realPaid 차인지급액 pay 급여
 import java.util.Vector;
 class Calc {
@@ -40,9 +46,9 @@ class Calc {
 	private double getRate(int paid) {
 		double rate = 0.0;
 		if(paid<70000) rate = 0;
-		else if(paid>=70000 && paid<=79999) rate = 0.0005;
-		else if(paid>=80000 && paid<=89999) rate = 0.0007;
-		else if(paid>=90000) rate = 0.0012;
+		else if(paid>=70000 && paid<=79999) rate = 0.005;
+		else if(paid>=80000 && paid<=89999) rate = 0.007;
+		else if(paid>=90000) rate = 0.012;
 		return rate;
 	}
 	//지급액별  조정액

@@ -50,11 +50,10 @@ public class Input {
 			int sudang = this.scan.nextInt();
 			
 			
+			System.out.print("입력 / 출력 (I/O) ? :");
 			y_n = this.scan.next().trim();
 			Employee employee = new Employee(no, level, ho, sudang);
 			this.vector.addElement(employee);
-			
-			System.out.print("입력 / 출력 (I/O) ? :");
 		}while(y_n.toUpperCase().equals("I"));
 	}
 }
