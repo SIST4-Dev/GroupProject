@@ -8,7 +8,7 @@ public class Input {
 		this.scan = new Scanner(System.in);
 	}
 	public	void input(){
-		String y_n = null;   //초기화
+		String y_n = "I";   //초기화
 		do{
 			System.out.print("사원번호 : ");
 			int no = this.scan.nextInt();
