@@ -13,6 +13,16 @@ public class Input {
 			System.out.print("사원번호 : ");
 			int no = this.scan.nextInt();
 			
+			boolean flag = false;
+			for (int i = 0; i < vector.size(); i++) {
+				if (vector.elementAt(i).getNo() == no) {
+					System.out.println("사원번호 중복");
+					flag = true;
+					break;
+				}
+			}
+			if (flag) continue;
+			
 			String stringNo = Integer.toString(no);
 			if(stringNo.length() > 2) {
 				System.out.println("사원번호는 정수 2자리 이내로 입력해주세요.");
@@ -38,10 +48,13 @@ public class Input {
 			
 			System.out.print("수당 : ");
 			int sudang = this.scan.nextInt();
-			System.out.print("입력 / 출력 (I/O) ? :");
+			
+			
 			y_n = this.scan.next().trim();
 			Employee employee = new Employee(no, level, ho, sudang);
 			this.vector.addElement(employee);
+			
+			System.out.print("입력 / 출력 (I/O) ? :");
 		}while(y_n.toUpperCase().equals("I"));
 	}
 }
