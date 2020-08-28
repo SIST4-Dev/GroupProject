@@ -1,4 +1,5 @@
 public class Employee {
+	
 	private int no, level, ho, sudang, paid, tax, realPaid;
 	public Employee(int no, int level, int ho, int sudang) {
 		this.no = no;
