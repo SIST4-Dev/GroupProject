@@ -1,11 +1,7 @@
 public class Employee {
 	private int basePay, nighttime, sizeOfFamily, 
-<<<<<<< HEAD
 	            afterTaxIncome, hogeubPay, familyPay, totalIncome, nighttimePay;
-=======
-    afterTaxIncome, hogeubPay, familyPay, totalIncome, nighttimePay;
->>>>>>> 1751a31d5d655dacc374dca185cca03cc9f633e1
-	private String employeeNo,employeeName;
+	private String employeeNo, department, employeeName;
 	
 	public Employee(String employeeNo, String employeeName, int basePay, int nighttime, int sizeOfFamily) {
 		this.employeeNo = employeeNo;
@@ -14,154 +10,90 @@ public class Employee {
 		this.nighttime = nighttime;
 		this.sizeOfFamily = sizeOfFamily;
 	}
-<<<<<<< HEAD
-
+	
+	public String getDepartment() {
+		return department;
+	}
+	
+	public void setDepartment(String department) {
+		this.department = department;
+	}
 	public int getBasePay() {
 		return basePay;
 	}
-
+	
 	public void setBasePay(int basePay) {
 		this.basePay = basePay;
 	}
-
+	
 	public int getNighttime() {
 		return nighttime;
 	}
-
+	
 	public void setNighttime(int nighttime) {
 		this.nighttime = nighttime;
 	}
-
+	
 	public int getSizeOfFamily() {
 		return sizeOfFamily;
 	}
-
+	
 	public void setSizeOfFamily(int sizeOfFamily) {
 		this.sizeOfFamily = sizeOfFamily;
 	}
-
+	
 	public int getAfterTaxIncome() {
 		return afterTaxIncome;
 	}
-
+	
 	public void setAfterTaxIncome(int afterTaxIncome) {
 		this.afterTaxIncome = afterTaxIncome;
 	}
-
+	
 	public int getHogeubPay() {
 		return hogeubPay;
 	}
-
+	
 	public void setHogeubPay(int hogeubPay) {
 		this.hogeubPay = hogeubPay;
 	}
-
+	
 	public int getFamilyPay() {
 		return familyPay;
 	}
-
+	
 	public void setFamilyPay(int familyPay) {
 		this.familyPay = familyPay;
 	}
-
+	
 	public int getTotalIncome() {
 		return totalIncome;
 	}
-
+	
 	public void setTotalIncome(int totalIncome) {
 		this.totalIncome = totalIncome;
 	}
-
+	
 	public int getNighttimePay() {
 		return nighttimePay;
 	}
-
+	
 	public void setNighttimePay(int nighttimePay) {
 		this.nighttimePay = nighttimePay;
 	}
-
+	
 	public String getEmployeeNo() {
 		return employeeNo;
 	}
-
+	
 	public void setEmployeeNo(String employeeNo) {
 		this.employeeNo = employeeNo;
 	}
-
+	
 	public String getEmployeeName() {
 		return employeeName;
 	}
-
-=======
-	public int getNighttime() {
-		return nighttime;
-	}
-​
-	public void setNighttime(int nighttime) {
-		this.nighttime = nighttime;
-	}
-​
-	public int getSizeOfFamily() {
-		return sizeOfFamily;
-	}
-​
-	public void setSizeOfFamily(int sizeOfFamily) {
-		this.sizeOfFamily = sizeOfFamily;
-	}
-​
-	public int getAfterTaxIncome() {
-		return afterTaxIncome;
-	}
-​
-	public void setAfterTaxIncome(int afterTaxIncome) {
-		this.afterTaxIncome = afterTaxIncome;
-	}
-​
-	public int getHogeubPay() {
-		return hogeubPay;
-	}
-​
-	public void setHogeubPay(int hogeubPay) {
-		this.hogeubPay = hogeubPay;
-	}
-​
-	public int getFamilyPay() {
-		return familyPay;
-	}
-​
-	public void setFamilyPay(int familyPay) {
-		this.familyPay = familyPay;
-	}
-​
-	public int getTotalIncome() {
-		return totalIncome;
-	}
-​
-	public void setTotalIncome(int totalIncome) {
-		this.totalIncome = totalIncome;
-	}
-​
-	public int getNighttimePay() {
-		return nighttimePay;
-	}
-​
-	public void setNighttimePay(int nighttimePay) {
-		this.nighttimePay = nighttimePay;
-	}
-​
-	public String getEmployeeNo() {
-		return employeeNo;
-	}
-​
-	public void setEmployeeNo(String employeeNo) {
-		this.employeeNo = employeeNo;
-	}
-​
-	public String getEmployeeName() {
-		return employeeName;
-	}
-​
->>>>>>> 1751a31d5d655dacc374dca185cca03cc9f633e1
+	
 	public void setEmployeeName(String employeeName) {
 		this.employeeName = employeeName;
 	}

@@ -10,8 +10,10 @@ public class Main {
 		Calc c = new Calc(employee);
 		c.calc();
 
+		/*
 		Sort s = new Sort(employee);
 		s.sort();
+		*/
 
 		Output o = new Output(employee);
 		o.output();
