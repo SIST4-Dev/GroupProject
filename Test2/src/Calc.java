@@ -34,12 +34,13 @@ public class Calc {
 			//총금액 = 호급수당+기본급+야간수당+가족수당
 			int totalIncome= em.getHogeubPay()+basefee+em.getNighttimePay()+em.getFamilyPay();
 			em.setTotalIncome(totalIncome);
-			
+			/*
+			*Testing
 			System.out.println("가족수당:" +em.getFamilyPay());
 			System.out.println("호급수당:" +em.getHogeubPay());
 			System.out.println("기본수당:" +em.getBasePay());
 			System.out.println("야간수당:" +em.getNighttimePay());
-			
+			*/
 			
 			//실수령액	= 총금액 - 세금
 			int tax = this.getTax(hogeubPay);//호급수당대비 세금
