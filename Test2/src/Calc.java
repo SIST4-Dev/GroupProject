@@ -9,27 +9,64 @@ public class Calc {
 	void calc() {
 		for(int i = 0; i<this.employee.size();i++) {
 			Employee em = this.employee.get(i);
+			
+			//부서이름 substring()으로 첫번째자리 deptCode읽어오기
 			String deptCode = em.getEmployeeNo().substring(0,1);
+			deptCode = this.getDepartment(deptCode);
+			em.setDepartment(deptCode);
+			
+			//호급수당 substring()으로 두번째자리 hogeubCode읽어오기
 			String hogeubCode = em.getEmployeeNo().substring(1,2);
-			//호급수당
 			int hogeubPay =this.getHogeubPay(hogeubCode);
+			em.setHogeubPay(hogeubPay);
+			
 			//가족수당 = 7000*가족수
 			int familyPay = 7000*em.getSizeOfFamily();
+			em.setFamilyPay(familyPay);
+			
 			//야간수당
 			int nighttimePay = getNighttimePay(em.getNighttime());
-			//총금액 = 호급수당+기본급+야간수당+가족수당
-			int totalIncome= em.getHogeubPay()+em.getBasePay()+
-					nighttimePay +em.getFamilyPay();
-			//실수령액	= 총금액 - 세금
-			double tax = this.getTax(hogeubPay);//호급수당대비 세금
-			int afterTaxIncome= (int)(totalIncome-tax);
-			em.setHogeubPay(hogeubPay);
-			em.setFamilyPay(familyPay);
 			em.setNighttimePay(nighttimePay);
+
+			//기본급
+			int basefee = this.getBasePay(em.getBasePay());
+			
+
+			//총금액 = 호급수당+기본급+야간수당+가족수당
+			int totalIncome= em.getHogeubPay()+basefee+em.getNighttimePay()+em.getFamilyPay();
 			em.setTotalIncome(totalIncome);
+			
+			System.out.println("가족수당:" +em.getFamilyPay());
+			System.out.println("호급수당:" +em.getHogeubPay());
+			System.out.println("기본수당:" +em.getBasePay());
+			System.out.println("야간수당:" +em.getNighttimePay());
+			
+			
+			//실수령액	= 총금액 - 세금
+			int tax = this.getTax(hogeubPay);//호급수당대비 세금
+			/*System.out.println("세금: "+ tax);*/
+			
+			int afterTaxIncome= totalIncome-tax;
 			em.setAfterTaxIncome(afterTaxIncome);
+			System.out.println("실수령액: "+afterTaxIncome);
+
+			
+			
 		}
 	}
+	//기본급 알아오기
+	private int getBasePay(int basePay) {
+		int basefee=0;
+		switch(basePay) {
+		case 1: basefee = 15000;break;
+		case 2: basefee = 25000;break;
+		case 3: basefee = 35000;break;
+		case 4: basefee = 45000;break;
+		default:
+		}
+		return basefee;
+	}
+	
 	//호급수당 알아오기
 	private int getHogeubPay(String hogeubCode) {
 		int hogeubPay = 0;
@@ -44,6 +81,7 @@ public class Calc {
 	}
 	return hogeubPay;
 	}
+	
 	//부서명코드 알아오기
 	private String getDepartment(String deptCode) {
 		String department = null;
@@ -58,6 +96,7 @@ public class Calc {
 		}
 		return department;
 	}
+	
 	//야간수당 알아오기
 	private int getNighttimePay(int nighttime) {
 		int nighttimefee = 0;
@@ -70,10 +109,11 @@ public class Calc {
 	}
 	return nighttimefee;
 	}
+	
 	//세금 알아오기
-	private double getTax(int hogeubPay) {
-		double tax = 0.0;
-		tax = hogeubPay*0.1;
+	private int getTax(int hogeubPay) {
+		int tax = 0;
+		tax = (int)(hogeubPay*0.1); //int형으로 형변환
 		return tax;
 	}
 }
