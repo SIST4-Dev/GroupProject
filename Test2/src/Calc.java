@@ -1,6 +1,6 @@
 import java.util.ArrayList;
-//employeeNo ; »ç¿ø¹øÈ£  basePay ; ±âº»±Ş  nighttime ; ¾ß°£½Ã°£ 
-//sizeOfFamily ; °¡Á·¼ö    afterTaxIncome ; ½Ç¼ö·É¾×
+//employeeNo ; ì‚¬ì›ë²ˆí˜¸  basePay ; ê¸°ë³¸ê¸‰  nighttime ; ì•¼ê°„ì‹œê°„ 
+//sizeOfFamily ; ê°€ì¡±ìˆ˜    afterTaxIncome ; ì‹¤ìˆ˜ë ¹ì•¡
 public class Calc {
 	private ArrayList<Employee> employee;
 	Calc(ArrayList<Employee> employee){
@@ -10,51 +10,50 @@ public class Calc {
 		for(int i = 0; i<this.employee.size();i++) {
 			Employee em = this.employee.get(i);
 			
-			//ºÎ¼­ÀÌ¸§ substring()À¸·Î Ã¹¹øÂ°ÀÚ¸® deptCodeÀĞ¾î¿À±â
+			//ë¶€ì„œì´ë¦„ substring()ìœ¼ë¡œ ì²«ë²ˆì§¸ìë¦¬ deptCodeì½ì–´ì˜¤ê¸°
 			String deptCode = em.getEmployeeNo().substring(0,1);
 			deptCode = this.getDepartment(deptCode);
 			em.setDepartment(deptCode);
 			
-			//È£±Ş¼ö´ç substring()À¸·Î µÎ¹øÂ°ÀÚ¸® hogeubCodeÀĞ¾î¿À±â
+			//í˜¸ê¸‰ìˆ˜ë‹¹ substring()ìœ¼ë¡œ ë‘ë²ˆì§¸ìë¦¬ hogeubCodeì½ì–´ì˜¤ê¸°
 			String hogeubCode = em.getEmployeeNo().substring(1,2);
 			int hogeubPay =this.getHogeubPay(hogeubCode);
 			em.setHogeubPay(hogeubPay);
 			
-			//°¡Á·¼ö´ç = 7000*°¡Á·¼ö
+			//ê°€ì¡±ìˆ˜ë‹¹ = 7000*ê°€ì¡±ìˆ˜
 			int familyPay = 7000*em.getSizeOfFamily();
 			em.setFamilyPay(familyPay);
 			
-			//¾ß°£¼ö´ç
+			//ì•¼ê°„ìˆ˜ë‹¹
 			int nighttimePay = getNighttimePay(em.getNighttime());
 			em.setNighttimePay(nighttimePay);
 
-			//±âº»±Ş
+			//ê¸°ë³¸ê¸‰
 			int basefee = this.getBasePay(em.getBasePay());
 			
-
-			//ÃÑ±İ¾× = È£±Ş¼ö´ç+±âº»±Ş+¾ß°£¼ö´ç+°¡Á·¼ö´ç
+			//ì´ê¸ˆì•¡ = í˜¸ê¸‰ìˆ˜ë‹¹+ê¸°ë³¸ê¸‰+ì•¼ê°„ìˆ˜ë‹¹+ê°€ì¡±ìˆ˜ë‹¹
 			int totalIncome= em.getHogeubPay()+basefee+em.getNighttimePay()+em.getFamilyPay();
 			em.setTotalIncome(totalIncome);
 			
-			System.out.println("°¡Á·¼ö´ç:" +em.getFamilyPay());
-			System.out.println("È£±Ş¼ö´ç:" +em.getHogeubPay());
-			System.out.println("±âº»¼ö´ç:" +em.getBasePay());
-			System.out.println("¾ß°£¼ö´ç:" +em.getNighttimePay());
+			System.out.println("ê°€ì¡±ìˆ˜ë‹¹:" +em.getFamilyPay());
+			System.out.println("í˜¸ê¸‰ìˆ˜ë‹¹:" +em.getHogeubPay());
+			System.out.println("ê¸°ë³¸ìˆ˜ë‹¹:" +em.getBasePay());
+			System.out.println("ì•¼ê°„ìˆ˜ë‹¹:" +em.getNighttimePay());
 			
 			
-			//½Ç¼ö·É¾×	= ÃÑ±İ¾× - ¼¼±İ
-			int tax = this.getTax(hogeubPay);//È£±Ş¼ö´ç´ëºñ ¼¼±İ
-			/*System.out.println("¼¼±İ: "+ tax);*/
+			//ì‹¤ìˆ˜ë ¹ì•¡	= ì´ê¸ˆì•¡ - ì„¸ê¸ˆ
+			int tax = this.getTax(hogeubPay);//í˜¸ê¸‰ìˆ˜ë‹¹ëŒ€ë¹„ ì„¸ê¸ˆ
+			/*System.out.println("ì„¸ê¸ˆ: "+ tax);*/
 			
 			int afterTaxIncome= totalIncome-tax;
 			em.setAfterTaxIncome(afterTaxIncome);
-			System.out.println("½Ç¼ö·É¾×: "+afterTaxIncome);
+			System.out.println("ì‹¤ìˆ˜ë ¹ì•¡: "+afterTaxIncome);
 
 			
 			
 		}
 	}
-	//±âº»±Ş ¾Ë¾Æ¿À±â
+	//ê¸°ë³¸ê¸‰ ì•Œì•„ì˜¤ê¸°
 	private int getBasePay(int basePay) {
 		int basefee=0;
 		switch(basePay) {
@@ -67,7 +66,7 @@ public class Calc {
 		return basefee;
 	}
 	
-	//È£±Ş¼ö´ç ¾Ë¾Æ¿À±â
+	//í˜¸ê¸‰ìˆ˜ë‹¹ ì•Œì•„ì˜¤ê¸°
 	private int getHogeubPay(String hogeubCode) {
 		int hogeubPay = 0;
 		switch(hogeubCode){
@@ -82,22 +81,22 @@ public class Calc {
 	return hogeubPay;
 	}
 	
-	//ºÎ¼­¸íÄÚµå ¾Ë¾Æ¿À±â
+	//ë¶€ì„œëª…ì½”ë“œ ì•Œì•„ì˜¤ê¸°
 	private String getDepartment(String deptCode) {
 		String department = null;
 		switch(deptCode){
-			case "A": department = "¿µ¾÷ºÎ"; break;
-			case "B": department = "¾÷¹«ºÎ"; break;
-			case "C": department = "È«º¸ºÎ"; break;
-			case "D": department = "ÀÎ»çºÎ"; break;
-			case "E": department = "°æ¸®ºÎ"; break;
-			case "F": department = "ÆÇÃËºÎ"; break;
-			case "G": department = "ÃÑ¹«ºÎ"; break;
+			case "A": department = "ì˜ì—…ë¶€"; break;
+			case "B": department = "ì—…ë¬´ë¶€"; break;
+			case "C": department = "í™ë³´ë¶€"; break;
+			case "D": department = "ì¸ì‚¬ë¶€"; break;
+			case "E": department = "ê²½ë¦¬ë¶€"; break;
+			case "F": department = "íŒì´‰ë¶€"; break;
+			case "G": department = "ì´ë¬´ë¶€"; break;
 		}
 		return department;
 	}
 	
-	//¾ß°£¼ö´ç ¾Ë¾Æ¿À±â
+	//ì•¼ê°„ìˆ˜ë‹¹ ì•Œì•„ì˜¤ê¸°
 	private int getNighttimePay(int nighttime) {
 		int nighttimefee = 0;
 		switch(nighttime){
@@ -110,10 +109,10 @@ public class Calc {
 	return nighttimefee;
 	}
 	
-	//¼¼±İ ¾Ë¾Æ¿À±â
+	//ì„¸ê¸ˆ ì•Œì•„ì˜¤ê¸°
 	private int getTax(int hogeubPay) {
 		int tax = 0;
-		tax = (int)(hogeubPay*0.1); //intÇüÀ¸·Î Çüº¯È¯
+		tax = (int)(hogeubPay*0.1); //intí˜•ìœ¼ë¡œ í˜•ë³€í™˜
 		return tax;
 	}
 }
