@@ -13,6 +13,7 @@ class Update {
 		this.scan = scan;
 	}
 	
+	// 기본급, 야간급, 가족수 수정하는 메소드
 	void update(Salary sal) {
 		System.out.printf("사원번호 : %s\t사원 이름 : %s\t기본급 : %d\t야간시간 : %d\t가족수 : %d%n", 
 				sal.getSabun(), sal.getName(), sal.getDefSalary(), sal.getNightHour(), sal.getFamily());

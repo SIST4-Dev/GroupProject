@@ -4,6 +4,7 @@ package com.example.libs;
 import java.util.Scanner;
 import java.util.Vector;
 
+// 검색
 class Search {
 	private Scanner scan;
 	private Vector<Salary> vector;
@@ -13,6 +14,7 @@ class Search {
 		this.scan = scan;
 	}
 	
+	// 사원번호로 검색
 	Salary search() {
 		System.out.print("검색할 사원번호 : ");
 		String sabun = this.scan.next();
