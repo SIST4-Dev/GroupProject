@@ -1,9 +1,7 @@
 package com.travel.service;
 
-public class MemberService {
+public interface MemberService {
 
-    public String login(String id, String pw){
-        return null;
-    }
+	String login(String id, String pw);
 
 }

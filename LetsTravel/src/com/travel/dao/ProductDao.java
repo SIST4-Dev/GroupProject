@@ -1,27 +1,26 @@
 package com.travel.dao;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 import com.travel.vo.ProductVO;
 
-public class ProductDao {
+public interface ProductDao {
 
-    public void insert(ProductVO product){
-    }
+	// 7번
+	public int insert(ProductVO product) throws SQLException;
 
-    public ArrayList<ProductVO> readByLocation(String productLoc){
-        return null;
-    }
+	// 4번
+	public ArrayList<ProductVO> readByLocation(String productLoc) throws SQLException;
 
-    public ArrayList<ProductVO> readAll(){
-        return null;
-    }
+	// 2번
+	public ArrayList<ProductVO> readAll() throws SQLException;
 
-    public ProductVO read(int productNum){
-        return null;
-    }
+	// 3번
+	public ProductVO read(int productNum) throws SQLException;
 
-    public void update(ProductVO product){
-    }
+	// 8번
+	public int update(ProductVO product) throws SQLException;
 
-    public void delete(String productNum){
-    }
-
+	// 9번
+	public int delete(int productNum) throws SQLException;
 }

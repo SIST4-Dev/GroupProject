@@ -1,13 +1,15 @@
 package com.travel.vo;
-public class ProductVO {
+public class CartOutputVO {
+    private int cartNum;
     private int productNum;
     private String productLoc;
     private int productPrice;
     private String checkin;
     private String checkout;
     private String productExp;
-	public ProductVO(int productNum, String productLoc, int productPrice, String checkin, String checkout,
-			String productExp) {
+	public CartOutputVO(int cartNum, int productNum, String productLoc, int productPrice, String checkin,
+			String checkout, String productExp) {
+		this.cartNum = cartNum;
 		this.productNum = productNum;
 		this.productLoc = productLoc;
 		this.productPrice = productPrice;
@@ -15,15 +17,12 @@ public class ProductVO {
 		this.checkout = checkout;
 		this.productExp = productExp;
 	}
-
-	public ProductVO(int productNum, String productLoc, int productPrice, String checkin, String checkout) {
-		this.productNum = productNum;
-		this.productLoc = productLoc;
-		this.productPrice = productPrice;
-		this.checkin = checkin;
-		this.checkout = checkout;
+	public int getCartNum() {
+		return cartNum;
 	}
-
+	public void setCartNum(int cartNum) {
+		this.cartNum = cartNum;
+	}
 	public int getProductNum() {
 		return productNum;
 	}

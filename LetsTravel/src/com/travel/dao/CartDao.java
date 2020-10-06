@@ -1,13 +1,18 @@
 package com.travel.dao;
-import com.travel.vo.CartVO;
 
-public class CartDao {
+import java.sql.SQLException;
+import java.util.ArrayList;
 
-    public ArrayList<CartVO> readAll(){
-        return null;
-    }
+import com.travel.vo.*;
 
-    public void insert(CartVO cart){
-    }
+public interface CartDao {
+
+	// 
+	public int insert(int productNum) throws SQLException;
+
+	// 
+	public ArrayList<CartOutputVO> readAll() throws SQLException;
+
+
 
 }
